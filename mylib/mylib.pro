@@ -2,10 +2,13 @@ TEMPLATE = lib
 CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
-DEFINES += LIB_BUILD
-#DEFINES += LIB_STATIC
 
-defined(LIB_STATIC): CONFIG += staticlib
+DEFINES += LIB_BUILD
+CONFIG += staticlib
+
+staticlib {
+    DEFINES += LIB_STATIC
+}
 
 
 SOURCES += \

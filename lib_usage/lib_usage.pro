@@ -5,7 +5,7 @@ CONFIG -= qt
 
 INCLUDEPATH += ../mylib
 
-
+DEFINES += LIB_STATIC
 
 CONFIG(release, debug|release) {
        LINK_PATH += -L$$OUT_PWD/../mylib/release
@@ -19,3 +19,5 @@ SOURCES += \
         main.cpp
 
 LIBS += $${LINK_PATH} $${LINK_LIBS}
+
+QMAKE_LFLAGS += -static-libgcc -static
